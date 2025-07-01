@@ -4,14 +4,26 @@ name: CI - Barbería Web
 on: [push, pull_request]
 
 jobs:
-  validar:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clonar repositorio
-        uses: actions/checkout@v3
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
 
-      - name: Ver estructura del proyecto
-        run: ls -la
+      - name: Ver estructura del proyecto
+        run: ls -la
 
-      - name: Validar HTML
-        uses: Cyb3r-Jak3/html5validator-action@v0.4.0
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Build del proyecto
+        run: npm run build
+
+      - name: Run ESLint
+        run: npx eslint src/ --ext .js,.jsx,.ts,.tsx
+
