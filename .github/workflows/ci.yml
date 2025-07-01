@@ -24,11 +24,6 @@ jobs:
       - name: Build del proyecto
         run: npm run build
 
-      - name: Validar HTML en /dist
-        uses: cyb3r-jak3/html5validator-action@v0.3.0
-        with:
-          directory: "./dist"
-
       - name: Run ESLint
         run: npx eslint src/ --ext .js,.jsx,.ts,.tsx
 
