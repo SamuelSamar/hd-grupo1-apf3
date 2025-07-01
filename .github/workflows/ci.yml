@@ -8,19 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clonar repositorio
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Ver estructura del proyecto
         run: ls -la
 
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Instalar dependencias
-        run: npm install
+        run: npm ci
 
       - name: Build del proyecto
         run: npm run build
 
       - name: Validar HTML en /dist
-        uses: Cyb3r-Jak3/html5validator-action@v0.4.0
+        uses: cyb3r-jak3/html5validator-action@v0.3.0
         with:
           directory: "./dist"
 
