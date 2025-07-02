@@ -1,13 +1,9 @@
-import React from "react";
 import classNames from "classnames";
-
 import barberImg from "../assets/barber.png";
-
 import cutIcon from "../assets/cut.png";
 import shaveIcon from "../assets/shaving.png";
 import beardIcon from "../assets/beard.png";
 import kidsIcon from "../assets/kids.png";
-
 import celia from "../assets/celia.png";
 import frank from "../assets/frank.png";
 import Navbar from "../components/Navbar";
@@ -47,7 +43,6 @@ export default function Comments() {
     <>
       <Navbar />
       <div className="font-sans">
-        {/* 1. Barbershop Services */}
         <section className="bg-gray-800 text-white pt-24 pb-12 px-4">
           <h1 className="text-center text-4xl md:text-5xl font-bold mb-12">
             Barbershop Services
@@ -75,15 +70,11 @@ export default function Comments() {
             </div>
           </div>
         </section>
-
-        {/* 2. Título de Galería */}
         <section className="bg-gray-800 text-white py-10 px-4">
           <h2 className="text-center text-3xl md:text-4xl font-semibold">
             Experience the Best Haircut & Shave Services
           </h2>
         </section>
-
-        {/* 3. Galería */}
         <section className="bg-[#b3ac84] py-8 px-4">
           <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {gallery.map((src, i) => (
@@ -96,8 +87,6 @@ export default function Comments() {
             ))}
           </div>
         </section>
-
-        {/* 4. People Comments */}
         <section className="bg-[#b3ac84] py-12 px-4">
           <h3 className="text-center text-4xl md:text-5xl font-bold text-white mb-8">
             People Comments
