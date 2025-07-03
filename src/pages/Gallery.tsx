@@ -112,37 +112,37 @@ const Gallery = () => {
         </div>
       </section>
       <section className="bg-[#b3ac84] py-16 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-12 text-black">Our Pricing</h2>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-black">Our Pricing</h2>
 
-        <div className="grid text-xl font-light grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            {leftColumn.map((item, index) => (
-              <div
-                key={index}
-                className="flex justify-between border-b border-black/10 pb-2 text-black"
-              >
-                <span>{item.service}</span>
-                <span className="text-white/50">{item.price}</span>
-              </div>
-            ))}
-          </div>
+          <div className="grid text-xl font-light grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="space-y-6">
+              {leftColumn.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex justify-between border-b border-black/10 pb-2 text-black"
+                >
+                  <span>{item.service}</span>
+                  <span className="text-white/50">{item.price}</span>
+                </div>
+              ))}
+            </div>
 
-          <div className="space-y-6">
-            {rightColumn.map((item, index) => (
-              <div
-                key={index}
-                className="flex justify-between border-b border-black/10 pb-2 text-black"
-              >
-                <span>{item.service}</span>
-                <span className="text-white/50">{item.price}</span>
-              </div>
-            ))}
+            <div className="space-y-6">
+              {rightColumn.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex justify-between border-b border-black/10 pb-2 text-black"
+                >
+                  <span>{item.service}</span>
+                  <span className="text-white/50">{item.price}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <Footer/>
+      </section>
+      <Footer />
     </>
   );
 };
