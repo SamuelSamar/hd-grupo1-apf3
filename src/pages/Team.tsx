@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
