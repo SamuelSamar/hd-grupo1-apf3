@@ -1,9 +1,6 @@
-
-
 const Footer = () => {
   return (
     <section className="flex flex-col md:flex-row min-h-[400px]">
-      {/* Imagen */}
       <div className="w-full md:w-1/2 h-72 md:h-auto">
         <img
           src="https://ftccollege.edu/wp-content/uploads/2023/08/barber-school.jpg"
@@ -11,8 +8,6 @@ const Footer = () => {
           className="w-full h-full object-cover"
         />
       </div>
-
-      {/* Formulario */}
       <div className="w-full md:w-1/2 bg-[#2c2b2b] text-white p-8 flex flex-col text-xl">
         <h2 className="text-2xl md:text-6xl font-bold mb-10 text-white text-center">
           Contact Us!
@@ -51,3 +46,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
