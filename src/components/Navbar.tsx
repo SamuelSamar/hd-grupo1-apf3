@@ -1,31 +1,34 @@
-import { useState } from "react";
+import { NavLink } from "react-router";
 import classNames from 'classnames';
 
-const navItems = ['Home', 'Our Team', 'Gallery', 'Comments'];
+const navItems = [
+  { label: 'Home', path: '/' },
+  { label: 'Our Team', path: '/team' },
+  { label: 'Gallery', path: '/gallery' },
+  { label: 'Comments', path: '/comments' },
+];
 
 const Navbar = () => {
-    const [active, setActive] = useState('Home');
-
   return (
     <nav className="w-full bg-white shadow-sm">
-    <div className="max-w-screen-xl mx-auto px-4 py-9 flex justify-end space-x-8 text-sm font-medium">
-      {navItems.map((item) => (
-        <button
-          key={item}
-          onClick={() => setActive(item)}
-          className={classNames(
-            'text-xl font-normal transition-colors duration-200',
-            active === item
-              ? 'text-gray-400 cursor-default'
-              : 'text-black hover:text-gray-600'
-          )}
-        >
-          {item}
-        </button>
-      ))}
-    </div>
-  </nav>
-  )
-}
+      <div className="max-w-screen-xl mx-auto px-4 py-9 flex justify-end space-x-8 text-sm font-medium">
+        {navItems.map((item) => (
+          <NavLink
+            key={item.path}
+            to={item.path}
+            className={({ isActive }) =>
+              classNames(
+                'text-xl font-normal transition-colors duration-200',
+                isActive ? 'text-gray-400 cursor-default' : 'text-black hover:text-gray-600'
+              )
+            }
+          >
+            {item.label}
+          </NavLink>
+        ))}
+      </div>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
